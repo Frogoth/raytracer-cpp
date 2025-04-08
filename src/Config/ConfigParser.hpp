@@ -9,8 +9,8 @@
     #define CONFIGPARSER_HPP_
     #include "../../main.hpp"
     #include "../RayTracer/Scene.hpp"
-    #include "../Primitives/Sphere.hpp"
-    #include "../Primitives/Plane.hpp"
+    #include "../Hittable/Sphere.hpp"
+    #include "../Hittable/Plane.hpp"
     #include "../Lights/Ambient.hpp"
     #include "../Lights/Diffuse.hpp"
     #include "../Lights/Point.hpp"

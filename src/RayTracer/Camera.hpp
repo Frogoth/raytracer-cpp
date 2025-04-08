@@ -7,10 +7,11 @@
 
 #pragma once
 #include "../RayTracer/Ray.hpp"
-#include "../RayTracer/Color.hpp"
-#include "../Primitives/IPrimitive.hpp"
+#include "../Math/Color.hpp"
+#include "../Hittable/IHittable.hpp"
+#include "../Math/mathUtility.hpp"
 
-using primVec = std::vector<std::shared_ptr<Primitive::IPrimitive>>;
+using primVec = std::vector<std::shared_ptr<Hittable::IHittable>>;
 
 namespace RayTracer
 {
@@ -27,9 +28,8 @@ namespace RayTracer
         Math::Vector3D _viewportU;
         Math::Vector3D _viewportV;
 
-        double degrees_to_radians(double degrees);
         Ray ray(double i, double j);
-        Color rayColor(Ray &r, primVec &pv);
+        Math::Color rayColor(Ray &r, const Hittable::IHittable &world);
 
         private:
         double _ratio;

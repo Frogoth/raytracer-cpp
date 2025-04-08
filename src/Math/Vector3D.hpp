@@ -24,8 +24,9 @@ namespace Math
 
             double length() const;
             double lengthSquared() const;
-            double dot(Vector3D &other);
-            Vector3D unitVector();
+            double dot(Vector3D &other) const;
+            double dot(const Vector3D &other) const;
+            Vector3D unitVector() const;
             Vector3D unitVector(const Vector3D &v);
 
         Vector3D &operator=(Vector3D &&other);
@@ -33,7 +34,7 @@ namespace Math
 
         Vector3D operator+(const Vector3D &other);
         Vector3D &operator+=(const Vector3D &other);
-        Vector3D operator-(const Vector3D &other);
+        Vector3D operator-(const Vector3D &other) const;
         Vector3D &operator-=(const Vector3D &other);
         Vector3D operator*(const Vector3D &other);
         Vector3D &operator*=(const Vector3D &other);
@@ -44,8 +45,8 @@ namespace Math
         Vector3D operator*(double f);
         Vector3D &operator*=(double f);
         Vector3D &operator/=(double f);
+        Vector3D operator-() const;
     };
-    std::ostream &operator<<(std::ostream &os, const Vector3D &v);
 
     using Point3D = Vector3D;
 

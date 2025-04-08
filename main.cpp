@@ -7,8 +7,8 @@
 
 #include "main.hpp"
 #include "src/RayTracer/Camera.hpp"
-#include "src/Primitives/LCylinder.hpp"
-#include "src/Primitives/Sphere.hpp"
+#include "src/Hittable/LCylinder.hpp"
+#include "src/Hittable/Sphere.hpp"
 #include "src/RayTracer/Scene.hpp"
 #include "src/Config/ConfigParser.hpp"
 

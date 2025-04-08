@@ -36,11 +36,15 @@ namespace Math
         return (std::pow(_x, 2) + std::pow(_y, 2) + std::pow(_z, 2));
     }
 
-    double Vector3D::dot(Vector3D &other) {
+    double Vector3D::dot(Vector3D &other) const {
         return ((this->_x * other._x) + (this->_y * other._y) + (this->_z * other._z));
     }
 
-    Vector3D Vector3D::unitVector() {
+    double Vector3D::dot(const Vector3D &other) const {
+        return ((this->_x * other._x) + (this->_y * other._y) + (this->_z * other._z));
+    }
+
+    Vector3D Vector3D::unitVector() const {
         Vector3D cp = *this;
         return cp / cp.length();
     }
@@ -79,7 +83,7 @@ namespace Math
         return *this;
     }
 
-    Vector3D Vector3D::operator-(const Vector3D &other) {
+    Vector3D Vector3D::operator-(const Vector3D &other) const {
         Vector3D newVec;
         newVec._x = this->_x - other._x;
         newVec._y = this->_y - other._y;
@@ -158,9 +162,8 @@ namespace Math
         return *this;
     }
 
-    std::ostream &operator<<(std::ostream &os, const Vector3D &v) {
-        os << "x = " << v._x << " y = " << v._y << " z = " << v._z;
-        return os;
+    Vector3D Vector3D::operator-() const {
+        return Vector3D(-_x, -_y, -_z);
     }
 
     inline Vector3D operator/(const Vector3D &v, double t) {

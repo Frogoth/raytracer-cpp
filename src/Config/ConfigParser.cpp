@@ -45,7 +45,7 @@ namespace CfgParser {
                     parseSphere(seine);
                 if (seine.exists("plane"))
                     parsePlane(seine);
-                parseLights(seine);
+                // parseLights(seine);
             }
         }
     }
@@ -69,9 +69,9 @@ namespace CfgParser {
         color.lookupValue("r", red);
         color.lookupValue("g", green);
         color.lookupValue("b", blue);
-        RayTracer::Color elcolor(red, green, blue);
-        Primitive::Sphere newSphere(v, r, elcolor);
-        _scene.addPrim(std::make_shared<Primitive::Sphere>(newSphere));
+        Math::Color elcolor(red, green, blue);
+        Hittable::Sphere newSphere(v, r, elcolor);
+        _scene._world.add(std::make_shared<Hittable::Sphere>(newSphere));
     }
 
     void ConfigParser::parsePlane(const libconfig::Setting& planes)
@@ -89,15 +89,15 @@ namespace CfgParser {
         color.lookupValue("r", r);
         color.lookupValue("g", g);
         color.lookupValue("b", b);
-        RayTracer::Color elcolor(r, g, b);
+        Math::Color elcolor(r, g, b);
         if (axe == "Z")
             Math::Vector3D v(0, 0, 1);
         if (axe == "Y")
             Math::Vector3D v(0, 1, 0);
         if (axe == "X")
             Math::Vector3D v(1, 0, 0);
-        Primitive::Plane newPlane(v, pos, elcolor);
-        _scene.addPrim(std::make_shared<Primitive::Plane>(newPlane));
+        Hittable::Plane newPlane(v, pos, elcolor);
+        _scene._world.add(std::make_shared<Hittable::Plane>(newPlane));
     }
 
     void ConfigParser::parseCamera(const libconfig::Setting& c)
@@ -127,45 +127,45 @@ namespace CfgParser {
         this->_scene.addCam(camera);
     }
 
-    void ConfigParser::parseLights(const libconfig::Setting &lights) {
-        std::string type;
-        if (lights.exists("type")) {
-            lights.lookupValue("type", type);
-            if (type == "ambient")
-                parseAmbient(lights);
-            if (type == "diffuse")
-                parseDiffuse(lights);
-            if (type == "point")
-                parsePoint(lights);
-        }
-    }
+    // void ConfigParser::parseLights(const libconfig::Setting &lights) {
+    //     std::string type;
+    //     if (lights.exists("type")) {
+    //         lights.lookupValue("type", type);
+    //         if (type == "ambient")
+    //             parseAmbient(lights);
+    //         if (type == "diffuse")
+    //             parseDiffuse(lights);
+    //         if (type == "point")
+    //             parsePoint(lights);
+    //     }
+    // }
 
-    void ConfigParser::parseAmbient(const libconfig::Setting &amb) {
-        double in = 0;
-        amb.lookupValue("intensity", in);
-        Light::Ambient newLight(in);
-        _scene.addLight(std::make_shared<Light::Ambient>(newLight));
-    }
+    // void ConfigParser::parseAmbient(const libconfig::Setting &amb) {
+    //     double in = 0;
+    //     amb.lookupValue("intensity", in);
+    //     Light::Ambient newLight(in);
+    //     _scene.addLight(std::make_shared<Light::Ambient>(newLight));
+    // }
 
-    void ConfigParser::parseDiffuse(const libconfig::Setting &dif) {
-        double in = 0;
-        dif.lookupValue("intensity", in);
-        Light::Diffuse newLight(in);
-        _scene.addLight(std::make_shared<Light::Diffuse>(newLight));
-    }
+    // void ConfigParser::parseDiffuse(const libconfig::Setting &dif) {
+    //     double in = 0;
+    //     dif.lookupValue("intensity", in);
+    //     Light::Diffuse newLight(in);
+    //     _scene.addLight(std::make_shared<Light::Diffuse>(newLight));
+    // }
 
-    void ConfigParser::parsePoint(const libconfig::Setting &poi) {
-        double x = 0;
-        double y = 0;
-        double z = 0;
+    // void ConfigParser::parsePoint(const libconfig::Setting &poi) {
+    //     double x = 0;
+    //     double y = 0;
+    //     double z = 0;
 
-        poi.lookupValue("x", x);
-        poi.lookupValue("y", y);
-        poi.lookupValue("z", z);
-        Math::Vector3D ppos(x, y ,z);
-        Light::Point newLight(ppos);
-        _scene.addLight(std::make_shared<Light::Point>(newLight));
-    }
+    //     poi.lookupValue("x", x);
+    //     poi.lookupValue("y", y);
+    //     poi.lookupValue("z", z);
+    //     Math::Vector3D ppos(x, y ,z);
+    //     Light::Point newLight(ppos);
+    //     _scene.addLight(std::make_shared<Light::Point>(newLight));
+    // }
 
     ConfigParser::fileOpenException::fileOpenException(const std::string &message) : _message("Parsing error: " + message) {}
 

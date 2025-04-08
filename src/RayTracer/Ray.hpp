@@ -14,19 +14,18 @@ namespace RayTracer
     class Ray {
         public:
             Ray();
-            Ray(Math::Point3D p, Math::Vector3D v);
+            Ray(const Math::Point3D p, const Math::Vector3D v);
             ~Ray();
             Ray(Ray &&other);
             Ray(const Ray &other);
 
-            Math::Point3D &getOrigin();
-            Math::Vector3D &getDirection();
+            const Math::Point3D &getOrigin() const;
+            const Math::Vector3D &getDirection() const;
 
-            Math::Point3D pointAt(double t);
+            Math::Point3D pointAt(double t) const;
 
             Ray &operator=(Ray &&other);
             Ray operator=(const Ray &other);
-            friend std::ostream &operator<<(std::ostream &os, const Ray &r);
         private:
             Math::Point3D _origin;
             Math::Vector3D _direction;

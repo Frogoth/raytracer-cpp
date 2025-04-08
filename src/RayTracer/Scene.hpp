@@ -6,8 +6,8 @@
 */
 
 #pragma once
-#include "../Primitives/IPrimitive.hpp"
-#include "../Primitives/Sphere.hpp"
+#include "../Hittable/HittableList.hpp"
+#include "../Hittable/Sphere.hpp"
 #include "../Lights/ILight.hpp"
 #include "../RayTracer/Camera.hpp"
 
@@ -19,14 +19,12 @@ namespace RayTracer
             ~Scene();
 
         void traceThatRay();
-        void addPrim(std::shared_ptr<Primitive::IPrimitive> p);
         void addLight(std::shared_ptr<Light::ILight> l);
         void addCam(Camera c);
         bool isPrimEmpty();
 
+        Hittable::HittableList _world;
         private:
-            std::vector<std::shared_ptr<Primitive::IPrimitive>> _prim;
-            std::vector<std::shared_ptr<Light::ILight>> _lights;
             Camera _cam;
     };
 } // namespace RayTracer

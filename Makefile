@@ -7,14 +7,16 @@
 
 SRC		=	main.cpp \
 			src/Config/ConfigParser.cpp \
+			src/Hittable/HittableList.cpp \
+			src/Hittable/Sphere.cpp \
+			src/Hittable/Plane.cpp \
 			src/Lights/Ambient.cpp \
 			src/Lights/Diffuse.cpp \
 			src/Lights/Point.cpp \
+			src/Math/Color.cpp \
+			src/Math/Record3D.cpp \
 			src/Math/Vector3D.cpp \
-			src/Primitives/Sphere.cpp \
-			src/Primitives/Plane.cpp \
 			src/RayTracer/Camera.cpp \
-			src/RayTracer/Color.cpp \
 			src/RayTracer/Ray.cpp \
 			src/RayTracer/Scene.cpp
 

@@ -7,6 +7,7 @@
 
 #pragma once
 #include "Vector3D.hpp"
+#include "../RayTracer/Ray.hpp"
 
 namespace Math
 {
@@ -15,5 +16,8 @@ namespace Math
             Vector3D p;
             Vector3D normal;
             double t;
+            bool frontFace;
+
+            void setFaceNormal(const RayTracer::Ray &r, const Vector3D &outwardNormal);
     };
 } // namespace Math

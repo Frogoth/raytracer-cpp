@@ -8,10 +8,10 @@
 #pragma once
     #include "../Math/Vector3D.hpp"
     #include "../RayTracer/Ray.hpp"
-    #include "../RayTracer/Color.hpp"
+    #include "../Math/Color.hpp"
     #include <cmath>
 
-namespace Primitive {
+namespace Hittable {
     class LCylinder {
         public:
             LCylinder();
@@ -27,7 +27,7 @@ namespace Primitive {
             double _top;
             double _height;
 
-            RayTracer::Color _col;
+            Math::Color _col;
             bool hitsTop(RayTracer::Ray &r);
             bool hitsBase(RayTracer::Ray &r);
             bool hits(RayTracer::Ray &r);
@@ -36,4 +36,4 @@ namespace Primitive {
         protected:
         private:
     };
-} // namespace Primitive
+} // namespace Hittable

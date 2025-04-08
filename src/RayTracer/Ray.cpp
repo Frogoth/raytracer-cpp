@@ -28,16 +28,18 @@ namespace RayTracer
 
     Ray::~Ray() {}
 
-    Math::Point3D &Ray::getOrigin() {
+    const Math::Point3D &Ray::getOrigin() const {
         return _origin;
     }
 
-    Math::Vector3D &Ray::getDirection() {
+    const Math::Vector3D &Ray::getDirection() const {
         return _direction;
     }
 
-    Math::Point3D Ray::pointAt(double t) {
-        return _origin + (_direction * t);
+    Math::Point3D Ray::pointAt(double t) const {
+        Math::Vector3D tmpDirection = _direction;
+        Math::Vector3D tmpOrigin = _origin;
+        return tmpOrigin + (tmpDirection * t);
     }
 
     Ray &Ray::operator=(Ray &&other) {
@@ -51,11 +53,6 @@ namespace RayTracer
         newray._origin = other._origin;
         newray._direction = other._direction;
         return newray;
-    }
-
-    std::ostream &operator<<(std::ostream &os, const Ray &r) {
-        os << "_origin = " << std::endl << r._origin << std::endl << "_direction = " << std::endl << r._direction << std::endl;
-        return os;
     }
 
 } // namespace RayTracer
