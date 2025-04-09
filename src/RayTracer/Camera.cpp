@@ -29,7 +29,7 @@ namespace RayTracer
 
     Math::Color Camera::rayColor(Ray &r, const Hittable::IHittable &world) {
         Math::Record3D rec;
-        if (world.hits(r, 0, infinity, rec)) {
+        if (world.hits(r, Math::Interval(0, infinity), rec)) {
             Math::Color err = 0.5 * (rec.normal + Math::Color(1, 1, 1));
             return err;
         }

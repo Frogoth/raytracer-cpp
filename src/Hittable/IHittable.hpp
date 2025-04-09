@@ -6,15 +6,17 @@
 */
 
 #pragma once
-    #include "../Math/Vector3D.hpp"
-    #include "../RayTracer/Ray.hpp"
-    #include "../Math/Record3D.hpp"
-    #include "../Math/Color.hpp"
+
+#include "../Math/Vector3D.hpp"
+#include "../RayTracer/Ray.hpp"
+#include "../Math/Record3D.hpp"
+#include "../Math/Color.hpp"
+#include "../Math/Interval.hpp"
 
 namespace Hittable {
     class IHittable {
         public:
             virtual ~IHittable() = default;
-            virtual bool hits(const RayTracer::Ray &r, double rayTmin, double rayTmax, Math::Record3D &rec) const = 0;
+            virtual bool hits(const RayTracer::Ray &r, Math::Interval ray_t, Math::Record3D &rec) const = 0;
     };
 } // namespace Hittable

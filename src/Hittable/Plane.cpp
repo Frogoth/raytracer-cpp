@@ -19,7 +19,7 @@ namespace Hittable
         _col = col;
     }
 
-    bool Plane::hits(const RayTracer::Ray &r, double rayTmin, double rayTmax, Math::Record3D &rec) const {
+    bool Plane::hits(const RayTracer::Ray &r, Math::Interval ray_t, Math::Record3D &rec) const {
         // if (r.getDirection().dot(this->_axis) == 0)
         //     return std::make_pair(0.0, 0.0);
         // else

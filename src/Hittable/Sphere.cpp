@@ -12,7 +12,7 @@ namespace Hittable
     Sphere::Sphere(Math::Vector3D p, double r, Math::Color col) : _center(p), _radius(r), _color(col) {}
     Sphere::~Sphere() {}
 
-    bool Sphere::hits(const RayTracer::Ray &r, double rayTmin, double rayTmax, Math::Record3D &rec) const {
+    bool Sphere::hits(const RayTracer::Ray &r, Math::Interval ray_t, Math::Record3D &rec) const {
         Math::Vector3D oc = r.getOrigin() - _center;
 
         double a = r.getDirection().lengthSquared();
@@ -25,10 +25,11 @@ namespace Hittable
         auto sqrt = std::sqrt(discriminant);
 
         auto root = (h - sqrt) / a;
-        if (root <= rayTmin || rayTmax <= root)
+        if (!ray_t.surrounds(root)) {
             root = (h + sqrt) / a;
-            if (root <= rayTmin || rayTmax <= root)
+            if (!ray_t.surrounds(root))
                 return false;
+        }
         rec.t = root;
         rec.p = r.pointAt(rec.t);
         Math::Vector3D outwardNormal = (rec.p - _center) / _radius;

@@ -20,7 +20,7 @@ namespace Hittable
 
             void clear();
             void add(std::shared_ptr<IHittable> object);
-            bool hits(const RayTracer::Ray &r, double rayTmin, double rayTmax, Math::Record3D &rec) const override;
+            bool hits(const RayTracer::Ray &r, Math::Interval ray_t, Math::Record3D &rec) const override;
 
         std::vector<std::shared_ptr<IHittable>> objects;
 

@@ -6,6 +6,7 @@
 */
 
 #pragma once
+
 #include "IHittable.hpp"
 
 namespace Hittable {
@@ -14,7 +15,7 @@ namespace Hittable {
             Sphere(Math::Vector3D p, double r, Math::Color c);
             ~Sphere();
 
-            bool hits(const RayTracer::Ray &r, double rayTmin, double rayTmax, Math::Record3D &rec) const;
+            bool hits(const RayTracer::Ray &r, Math::Interval ray_t, Math::Record3D &rec) const;
 
             friend std::ostream &operator<<(std::ostream &os, const Sphere &s);
         private:

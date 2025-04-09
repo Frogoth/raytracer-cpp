@@ -23,13 +23,13 @@ namespace Hittable
         objects.push_back(object);
     }
 
-    bool HittableList::hits(const RayTracer::Ray &r, double rayTmin, double rayTmax, Math::Record3D &rec) const {
+    bool HittableList::hits(const RayTracer::Ray &r, Math::Interval ray_t, Math::Record3D &rec) const {
         Math::Record3D tmpRec;
         bool hitAnything = false;
-        double closestSoFar = rayTmax;
+        double closestSoFar = ray_t._max;
 
         for (const auto &object : objects) {
-            if (object->hits(r, rayTmin, closestSoFar, tmpRec)) {
+            if (object->hits(r, Math::Interval(ray_t._min, closestSoFar), tmpRec)) {
                 hitAnything = true;
                 closestSoFar = tmpRec.t;
                 rec = tmpRec;
