@@ -14,6 +14,7 @@ SRC		=	main.cpp \
 			src/Lights/Diffuse.cpp \
 			src/Lights/Point.cpp \
 			src/Math/Color.cpp \
+			src/Math/Interval.cpp \
 			src/Math/Record3D.cpp \
 			src/Math/Vector3D.cpp \
 			src/RayTracer/Camera.cpp \
@@ -22,7 +23,7 @@ SRC		=	main.cpp \
 
 NAME	=	raytracer
 
-CPPFLAGS	=	-std=c++20 -lconfig++
+CPPFLAGS	=	-std=c++20 -lconfig++ -I./include
 
 OBJ		=	$(SRC:.cpp=.o)
 
