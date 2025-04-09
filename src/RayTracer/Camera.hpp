@@ -6,10 +6,8 @@
 */
 
 #pragma once
-#include "../RayTracer/Ray.hpp"
-#include "../Math/Color.hpp"
+
 #include "../Hittable/IHittable.hpp"
-#include "../Math/mathUtility.hpp"
 
 using primVec = std::vector<std::shared_ptr<Hittable::IHittable>>;
 

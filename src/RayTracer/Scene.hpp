@@ -6,6 +6,7 @@
 */
 
 #pragma once
+
 #include "../Hittable/HittableList.hpp"
 #include "../Hittable/Sphere.hpp"
 #include "../Lights/ILight.hpp"

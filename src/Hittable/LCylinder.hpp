@@ -6,10 +6,10 @@
 */
 
 #pragma once
-    #include "../Math/Vector3D.hpp"
-    #include "../RayTracer/Ray.hpp"
-    #include "../Math/Color.hpp"
-    #include <cmath>
+
+#include "../Math/Vector3D.hpp"
+#include "../RayTracer/Ray.hpp"
+#include "../Math/Color.hpp"
 
 namespace Hittable {
     class LCylinder {

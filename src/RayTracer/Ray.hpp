@@ -6,6 +6,7 @@
 */
 
 #pragma once
+
 #include "../Math/Vector3D.hpp"
 #include "../../main.hpp"
 

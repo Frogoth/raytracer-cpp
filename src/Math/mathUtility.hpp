@@ -6,6 +6,7 @@
 */
 
 #pragma once
+
 #include "../../main.hpp"
 
 const double infinity = std::numeric_limits<double>::infinity();

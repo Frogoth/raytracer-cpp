@@ -6,7 +6,7 @@
 */
 
 #pragma once
-#include "Vector3D.hpp"
+
 #include "../RayTracer/Ray.hpp"
 
 namespace Math

@@ -5,15 +5,15 @@
 ** ConfigParser
 */
 
-#ifndef CONFIGPARSER_HPP_
-    #define CONFIGPARSER_HPP_
-    #include "../../main.hpp"
-    #include "../RayTracer/Scene.hpp"
-    #include "../Hittable/Sphere.hpp"
-    #include "../Hittable/Plane.hpp"
-    #include "../Lights/Ambient.hpp"
-    #include "../Lights/Diffuse.hpp"
-    #include "../Lights/Point.hpp"
+#pragma once
+
+#include "../../main.hpp"
+#include "../RayTracer/Scene.hpp"
+#include "../Hittable/Sphere.hpp"
+#include "../Hittable/Plane.hpp"
+#include "../Lights/Ambient.hpp"
+#include "../Lights/Diffuse.hpp"
+#include "../Lights/Point.hpp"
 
 namespace CfgParser {
     class ConfigParser {
@@ -45,5 +45,3 @@ namespace CfgParser {
             libconfig::Config _cfg;
     };
 } // namespace Config
-
-#endif /* !CONFIGPARSER_HPP_ */
