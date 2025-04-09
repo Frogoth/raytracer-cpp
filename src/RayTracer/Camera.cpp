@@ -21,10 +21,13 @@ namespace RayTracer
     }
     Camera::~Camera() {}
 
-    Ray Camera::ray(double i, double j) {
-        Math::Vector3D pixelCenter = _pixel00 + (i * _pixelDeltaU) + (j * _pixelDeltaV);
-        Math::Vector3D rayDirection = pixelCenter - _origin;
-        return RayTracer::Ray(_origin, rayDirection);
+    Ray Camera::getRay(double i, double j) {
+        Math::Point3D offset = sampleSquare();
+        Math::Vector3D pixelSample = _pixel00 + ((i + offset._x) * _pixelDeltaU) + ((j + offset._y) * _pixelDeltaV);
+
+        Math::Point3D rayOrigin = _origin;
+        Math::Vector3D rayDirection = pixelSample - rayOrigin;
+        return Ray(rayOrigin, rayDirection);
     }
 
     Math::Color Camera::rayColor(Ray &r, const Hittable::IHittable &world) {
@@ -40,6 +43,10 @@ namespace RayTracer
         return err;
     }
 
+    Math::Point3D Camera::sampleSquare() const {
+        return Math::Point3D(randomDouble() - 0.5, randomDouble() - 0.5, 0);
+    }
+
     void Camera::setupCamera() {
         _ratio = double(_iPixelW) / _iPixelH;
         _focalLength = 1.0;
@@ -51,5 +58,7 @@ namespace RayTracer
         _pixelDeltaV = _viewportV / _iPixelH;
         _viewportUpperLeft = _origin - Math::Vector3D(0, 0, _focalLength) - _viewportU / 2 - _viewportV / 2;
         _pixel00 = _viewportUpperLeft + 0.5 * (_pixelDeltaU + _pixelDeltaV);
+        _samplesPerPixels = 20;
+        _pixelSamplesScale = 1.0 / _samplesPerPixels;
     }
 } // namespace RayTracer

@@ -9,6 +9,7 @@
 
 #include <main.hpp>
 #include <Math/Vector3D.hpp>
+#include <Math/Interval.hpp>
 
 namespace Math
 {

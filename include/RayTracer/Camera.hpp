@@ -26,10 +26,10 @@ namespace RayTracer
         Math::Vector3D _viewportU;
         Math::Vector3D _viewportV;
 
-        Ray ray(double i, double j);
+        Ray getRay(double i, double j);
         Math::Color rayColor(Ray &r, const Hittable::IHittable &world);
+        Math::Point3D sampleSquare() const;
 
-        private:
         double _ratio;
         double _focalLength;
         double _fov;
@@ -39,6 +39,8 @@ namespace RayTracer
         Math::Vector3D _pixelDeltaU;
         Math::Vector3D _pixelDeltaV;
         Math::Point3D _viewportUpperLeft;
+        int _samplesPerPixels;
+        double _pixelSamplesScale;
 
         void setupCamera();
     };

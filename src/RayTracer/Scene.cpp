@@ -21,7 +21,7 @@ namespace RayTracer
         _cam = c;
     }
 
-    void Scene::traceThatRay() {
+    void Scene::render() {
         std::ofstream File("renders/test.ppm");
         int imageWidth = _cam._iPixelW;
         int imageHeight = _cam._iPixelH;
@@ -33,9 +33,13 @@ namespace RayTracer
             // progress indicator
             std::clog << "\rScanlines remaining: " << (imageHeight - j) << '/' << imageHeight << ' ' << std::flush;
             for (int i = 0; i < imageWidth; i++) {
-                RayTracer::Ray ray = _cam.ray(i, j);
-                Math::Color pixelColor = _cam.rayColor(ray, _world);
-                File << pixelColor << "\n";
+                Math::Color pixelColor(0, 0, 0);
+                for (int sample = 0; sample < _cam._samplesPerPixels; sample++) {
+                    RayTracer::Ray ray = _cam.getRay(i, j);
+                    pixelColor += _cam.rayColor(ray, _world);
+                }
+                Math::Color drawPixel = pixelColor * _cam._pixelSamplesScale;
+                File << drawPixel << "\n";
             }
         }
         // end of progress indicator

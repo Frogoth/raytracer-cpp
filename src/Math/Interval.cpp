@@ -27,6 +27,14 @@ namespace Math
         return _min < x && x < _max;
     }
 
+    double Interval::clamp(double x) const {
+        if (x < _min)
+            return _min;
+        if (x > _max)
+            return _max;
+        return x;
+    }
+
     const Interval Interval::_empty = Interval(+infinity, -infinity);
     const Interval Interval::_universe = Interval(-infinity, +infinity);
 } // namespace Math

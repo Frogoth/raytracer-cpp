@@ -19,7 +19,7 @@ namespace RayTracer
             Scene();
             ~Scene();
 
-        void traceThatRay();
+        void render();
         void addLight(std::shared_ptr<Light::ILight> l);
         void addCam(Camera c);
         bool isPrimEmpty();

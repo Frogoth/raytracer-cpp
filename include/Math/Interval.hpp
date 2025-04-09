@@ -20,6 +20,7 @@ namespace Math
             double size() const;
             bool contains (double x) const;
             bool surrounds(double x) const;
+            double clamp(double x) const;
 
             double _min;
             double _max;
