@@ -5,7 +5,7 @@
 ** Vector3D
 */
 
-#include "Vector3D.hpp"
+#include <Math/Vector3D.hpp>
 
 namespace Math
 {

@@ -5,7 +5,7 @@
 ** Cylinder
 */
 
-#include "LCylinder.hpp"
+#include <Hittable/LCylinder.hpp>
 
 LCylinder::LCylinder()
 {

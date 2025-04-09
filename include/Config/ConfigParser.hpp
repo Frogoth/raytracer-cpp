@@ -7,13 +7,13 @@
 
 #pragma once
 
-#include "../../main.hpp"
-#include "../RayTracer/Scene.hpp"
-#include "../Hittable/Sphere.hpp"
-#include "../Hittable/Plane.hpp"
-#include "../Lights/Ambient.hpp"
-#include "../Lights/Diffuse.hpp"
-#include "../Lights/Point.hpp"
+#include <main.hpp>
+#include <RayTracer/Scene.hpp>
+#include <Hittable/Sphere.hpp>
+#include <Hittable/Plane.hpp>
+#include <Lights/Ambient.hpp>
+#include <Lights/Diffuse.hpp>
+#include <Lights/Point.hpp>
 
 namespace CfgParser {
     class ConfigParser {

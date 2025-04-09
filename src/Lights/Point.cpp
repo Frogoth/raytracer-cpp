@@ -5,7 +5,7 @@
 ** Point
 */
 
-#include "Point.hpp"
+#include <Lights/Point.hpp>
 
 namespace Light
 {

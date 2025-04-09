@@ -5,7 +5,7 @@
 ** Interval
 */
 
-#include "Interval.hpp"
+#include <Math/Interval.hpp>
 
 namespace Math
 {

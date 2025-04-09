@@ -5,7 +5,7 @@
 ** Ray
 */
 
-#include "Ray.hpp"
+#include <RayTracer/Ray.hpp>
 
 namespace RayTracer
 {

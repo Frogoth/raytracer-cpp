@@ -5,7 +5,7 @@
 ** Cone.cpp
 */
 
-#include "Cone.hpp"
+#include <Hittable/Cone.hpp>
 
 Cone::Cone()
 {

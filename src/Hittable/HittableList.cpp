@@ -5,7 +5,7 @@
 ** HittableList
 */
 
-#include "HittableList.hpp"
+#include <Hittable/HittableList.hpp>
 
 namespace Hittable
 {

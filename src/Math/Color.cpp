@@ -5,7 +5,7 @@
 ** Color
 */
 
-#include "Color.hpp"
+#include <Math/Color.hpp>
 
 namespace Math
 {

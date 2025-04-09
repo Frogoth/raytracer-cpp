@@ -5,7 +5,7 @@
 ** Cylinder
 */
 
-#include "Cylinder.hpp"
+#include <Hittable/Cylinder.hpp>
 
 Cylinder::Cylinder()
 {

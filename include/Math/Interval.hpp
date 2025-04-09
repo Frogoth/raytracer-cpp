@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "mathUtility.hpp"
+#include <Math/mathUtility.hpp>
 
 namespace Math
 {

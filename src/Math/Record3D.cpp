@@ -5,7 +5,7 @@
 ** Record3D
 */
 
-#include "Record3D.hpp"
+#include <Math/Record3D.hpp>
 
 namespace Math
 {

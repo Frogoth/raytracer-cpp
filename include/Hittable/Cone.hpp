@@ -7,9 +7,9 @@
 
 #pragma once
 
-#include "../Math/Vector3D.hpp"
-#include "../Math/Color.hpp"
-#include "../RayTracer/Ray.hpp"
+#include <Math/Vector3D.hpp>
+#include <Math/Color.hpp>
+#include <RayTracer/Ray.hpp>
 
 class Cone {
     public:

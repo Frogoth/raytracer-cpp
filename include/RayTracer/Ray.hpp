@@ -7,8 +7,8 @@
 
 #pragma once
 
-#include "../Math/Vector3D.hpp"
-#include "../../main.hpp"
+#include <Math/Vector3D.hpp>
+#include <main.hpp>
 
 namespace RayTracer
 {

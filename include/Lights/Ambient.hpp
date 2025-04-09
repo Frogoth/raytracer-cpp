@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "ILight.hpp"
+#include <Lights/ILight.hpp>
 
 namespace Light
 {

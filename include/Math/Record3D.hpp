@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "../RayTracer/Ray.hpp"
+#include <RayTracer/Ray.hpp>
 
 namespace Math
 {

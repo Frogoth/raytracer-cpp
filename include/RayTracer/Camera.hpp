@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "../Hittable/IHittable.hpp"
+#include <Hittable/IHittable.hpp>
 
 using primVec = std::vector<std::shared_ptr<Hittable::IHittable>>;
 

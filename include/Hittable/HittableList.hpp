@@ -7,8 +7,8 @@
 
 #pragma once
 
-#include "../../main.hpp"
-#include "IHittable.hpp"
+#include <main.hpp>
+#include <Hittable/IHittable.hpp>
 
 namespace Hittable
 {

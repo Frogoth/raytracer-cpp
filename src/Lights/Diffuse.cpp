@@ -5,7 +5,7 @@
 ** Diffuse
 */
 
-#include "Diffuse.hpp"
+#include <Lights/Diffuse.hpp>
 
 namespace Light
 {

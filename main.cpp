@@ -5,12 +5,12 @@
 ** main
 */
 
-#include "main.hpp"
-#include "src/RayTracer/Camera.hpp"
-#include "src/Hittable/LCylinder.hpp"
-#include "src/Hittable/Sphere.hpp"
-#include "src/RayTracer/Scene.hpp"
-#include "src/Config/ConfigParser.hpp"
+#include <main.hpp>
+#include <RayTracer/Camera.hpp>
+#include <Hittable/LCylinder.hpp>
+#include <Hittable/Sphere.hpp>
+#include <RayTracer/Scene.hpp>
+#include <Config/ConfigParser.hpp>
 
 int main(int ac, char **av)
 {

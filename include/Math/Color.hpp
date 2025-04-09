@@ -7,8 +7,8 @@
 
 #pragma once
 
-#include "../../main.hpp"
-#include "Vector3D.hpp"
+#include <main.hpp>
+#include <Math/Vector3D.hpp>
 
 namespace Math
 {

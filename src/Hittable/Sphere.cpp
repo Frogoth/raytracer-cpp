@@ -5,7 +5,7 @@
 ** Sphere
 */
 
-#include "Sphere.hpp"
+#include <Hittable/Sphere.hpp>
 
 namespace Hittable
 {

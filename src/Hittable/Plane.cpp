@@ -5,7 +5,7 @@
 ** Plane
 */
 
-#include "Plane.hpp"
+#include <Hittable/Plane.hpp>
 
 namespace Hittable
 {

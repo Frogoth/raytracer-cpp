@@ -5,7 +5,7 @@
 ** ConfigParser
 */
 
-#include "ConfigParser.hpp"
+#include <Config/ConfigParser.hpp>
 
 namespace CfgParser {
 

@@ -5,7 +5,7 @@
 ** Ambient
 */
 
-#include "Ambient.hpp"
+#include <Lights/Ambient.hpp>
 
 namespace Light
 {

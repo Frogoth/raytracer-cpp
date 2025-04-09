@@ -7,10 +7,10 @@
 
 #pragma once
 
-#include "../Hittable/HittableList.hpp"
-#include "../Hittable/Sphere.hpp"
-#include "../Lights/ILight.hpp"
-#include "../RayTracer/Camera.hpp"
+#include <Hittable/HittableList.hpp>
+#include <Hittable/Sphere.hpp>
+#include <Lights/ILight.hpp>
+#include <RayTracer/Camera.hpp>
 
 namespace RayTracer
 {

@@ -7,11 +7,11 @@
 
 #pragma once
 
-#include "../Math/Vector3D.hpp"
-#include "../RayTracer/Ray.hpp"
-#include "../Math/Record3D.hpp"
-#include "../Math/Color.hpp"
-#include "../Math/Interval.hpp"
+#include <Math/Vector3D.hpp>
+#include <RayTracer/Ray.hpp>
+#include <Math/Record3D.hpp>
+#include <Math/Color.hpp>
+#include <Math/Interval.hpp>
 
 namespace Hittable {
     class IHittable {
