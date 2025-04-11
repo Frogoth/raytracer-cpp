@@ -41,7 +41,6 @@ namespace RayTracer
         Math::Point3D _viewportUpperLeft;
         int _samplesPerPixels;
         double _pixelSamplesScale;
-
         void setupCamera();
     };
 } // namespace RayTracer

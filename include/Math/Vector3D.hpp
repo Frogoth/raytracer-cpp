@@ -8,6 +8,7 @@
 #pragma once
 
 #include <main.hpp>
+#include <Math/mathUtility.hpp>
 
 namespace Math
 {
@@ -25,10 +26,15 @@ namespace Math
 
             double length() const;
             double lengthSquared() const;
+            static Vector3D randomVector();
+            static Vector3D randomVector(double min, double max);
             double dot(Vector3D &other) const;
             double dot(const Vector3D &other) const;
             Vector3D unitVector() const;
             Vector3D unitVector(const Vector3D &v);
+
+            static Vector3D randomUnitVector();
+            static Vector3D randomOnHemisphere(const Vector3D &normal);
 
         Vector3D &operator=(Vector3D &&other);
         Vector3D &operator=(const Vector3D &other);

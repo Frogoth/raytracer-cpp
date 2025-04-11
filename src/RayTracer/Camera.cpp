@@ -33,8 +33,9 @@ namespace RayTracer
     Math::Color Camera::rayColor(Ray &r, const Hittable::IHittable &world) {
         Math::Record3D rec;
         if (world.hits(r, Math::Interval(0, infinity), rec)) {
-            Math::Color err = 0.5 * (rec.normal + Math::Color(1, 1, 1));
-            return err;
+            Math::Vector3D direction = Math::Vector3D::randomOnHemisphere(rec.normal);
+            Ray newRay(rec.p, direction);
+            return 0.5 * rayColor(newRay, world);
         }
 
         Math::Vector3D unitDirection = r.getDirection().unitVector();
@@ -58,7 +59,7 @@ namespace RayTracer
         _pixelDeltaV = _viewportV / _iPixelH;
         _viewportUpperLeft = _origin - Math::Vector3D(0, 0, _focalLength) - _viewportU / 2 - _viewportV / 2;
         _pixel00 = _viewportUpperLeft + 0.5 * (_pixelDeltaU + _pixelDeltaV);
-        _samplesPerPixels = 20;
+        _samplesPerPixels = 50;
         _pixelSamplesScale = 1.0 / _samplesPerPixels;
     }
 } // namespace RayTracer

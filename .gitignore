@@ -32,8 +32,5 @@
 *.app
 raytracer
 
-#result files
-*.ppm
-
 # ide
 .vscode

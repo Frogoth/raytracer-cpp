@@ -36,6 +36,14 @@ namespace Math
         return (std::pow(_x, 2) + std::pow(_y, 2) + std::pow(_z, 2));
     }
 
+    Vector3D Vector3D::randomVector() {
+        return Vector3D(randomDouble(), randomDouble(), randomDouble());
+    }
+
+    Vector3D Vector3D::randomVector(double min, double max) {
+        return Vector3D(randomDouble(min, max), randomDouble(min, max), randomDouble(min, max));
+    }
+
     double Vector3D::dot(Vector3D &other) const {
         return ((this->_x * other._x) + (this->_y * other._y) + (this->_z * other._z));
     }
@@ -47,6 +55,23 @@ namespace Math
     Vector3D Vector3D::unitVector() const {
         Vector3D cp = *this;
         return cp / cp.length();
+    }
+
+    Vector3D Vector3D::randomUnitVector() {
+        while (true) {
+            Vector3D p = Vector3D::randomVector(-1, 1);
+            double lengthSqrd = p.lengthSquared();
+            if (1e-160 < lengthSqrd && lengthSqrd <= 1)
+                return p / std::sqrt(lengthSqrd);
+        }
+    }
+
+    Vector3D Vector3D::randomOnHemisphere(const Vector3D &normal) {
+        Vector3D unitOnSphere = randomUnitVector();
+        if (unitOnSphere.dot(normal) > 0.0)
+            return unitOnSphere;
+        else
+            return -unitOnSphere;
     }
 
     Vector3D Vector3D::unitVector(const Vector3D &v) {
